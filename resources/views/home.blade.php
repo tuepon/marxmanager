@@ -21,6 +21,18 @@
                         data-target="#addModal" 
                         type="button" 
                         name="button">Add Bookmark</button>
+                        <hr>
+                        <h3>My Bookmarks</h3>
+                        <ul class="list-group">
+                            @foreach($bookmarks as $bookmark)
+                            <li class="list-group-item clearfix">
+                               <a href="{{$bookmark->url}}" target="_blank" style="position:absolute;top:30%">{{$bookmark->name}}<span class="label label-default">{{$bookmark->description}}</span></a>
+                               <span class="pull-right button-group">
+                                <button type="button" class="btn btn-danger" name="button"><span class="glyphicon glyphicon-remove"></span>Delete</button>
+                               </span>
+                            </li>
+                            @endforeach
+                        </ul>
                 </div>
             </div>
         </div>
@@ -33,6 +45,7 @@
       <div class="modal-header">
         <h4 class="modal-title">Add Bookmark</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </span>
       </div>
       <div class="modal-body">
         <form action="{{ route('bookmarks.store') }}" method="post">
