@@ -26,10 +26,10 @@
                         <ul class="list-group">
                             @foreach($bookmarks as $bookmark)
                             <li class="list-group-item clearfix">
-                               <a href="{{$bookmark->url}}" target="_blank" style="position:absolute;top:30%">{{$bookmark->name}}<span class="label label-default">{{$bookmark->description}}</span></a>
-                               <span class="pull-right button-group">
-                                <button type="button" class="btn btn-danger" name="button"><span class="glyphicon glyphicon-remove"></span>Delete</button>
-                               </span>
+                                <a href="{{$bookmark->url}}" target="_blank" style="position:absolute; top:30%;">{{$bookmark->name}} <span class="badge badge-secondary">{{$bookmark->description}}</span></a>
+                                <span class="float-right button-group">
+                                    <button type="button" class="btn btn-danger" name="button"><span class="glyphicon glyphicon-remove"></span> Delete</button>
+                                </span>
                             </li>
                             @endforeach
                         </ul>
